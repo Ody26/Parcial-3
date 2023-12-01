@@ -1,26 +1,9 @@
+
 create database BDSky
 
 Use BDSky
 
-create table usuarios (
-id_usua int identity
-	constraint Formulario_id_pk primary key,
-nombre varchar (max),
-email varchar (50)
-	constraint Formulario_email_ck
-		check (email like '%@%'),
-mensaje varchar (max)
-)
 
-insert into usuarios(nombre, email, mensaje)
-	values ('Carlos Dominguez', 'cdominguez@gmail.com', 'Hola a todos, me gustaría unirme a esta comunidad. Soy Carlos y estoy interesado en Sky. Me encantaría conocer a otras personas apasionadas por este juego y jugar juntos.'),
-		   ('Mariana Sánchez', 'mari@gmail.com', '¡Hola comunidad! Soy nueva por aquí y estoy emocionada de formar parte de este grupo. Me encanta Sky y espero poder convivir y aprender de todos ustedes. ¡Estoy ansiosa por comenzar!'),
-		   ('Juan Carlos', 'juanca@gmail.com', 'Buen día a todos. Me alegraría formar parte de esta comunidad. Me llamo Juan y me descargué el juego hace algunos días. Estoy emocionado de compartir mi alegría y aprender de los demás. ¡Espero conectar con ustedes!'),
-		   ('Daniela Zeballos', 'dani@gmail.com', 'Hola comunidad, ¿cómo están? Me presento, soy Daniela y he estado siguiendo esta comunidad desde hace algún tiempo. Finalmente me animé a unirme y ser parte activa de las discusiones y actividades. ¡Estoy emocionada por compartir momentos juntos!'),
-		   ('Arturo Belcast', 'artur@gmail.com', '¡Saludos a todos! Me enteré de esta comunidad y me parece fantástica. Me encantaría unirme y contribuir en lo que pueda. Soy Arturo y me encanta Sky. Espero conectar con ustedes y aprender de sus experiencias.')
-
-select * from sec_temporadas
-drop table sec_temporadas
 create table sec_temporadas(
 	id_temp int identity,
 	img varchar(max),
@@ -41,19 +24,12 @@ create table sec_comunidad (
 	title_comun varchar(100),
 	descrip_comun varchar(max)
 )
-select * from sec_comunidad
+
 insert into sec_comunidad
-values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/comunidad.jpeg?raw=true', 'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/sky.png?raw=true','Únete a la encantadora comunidad de Sky','Tomarse de la mano y emprender el vuelo en una aventura social inolvidable junto con sus seres queridos. Explora los siete reinos de este mundo bellamente animado con otros jugadores donde la compasión, la comunidad y el asombro te saludan en cada paso. Crea recuerdos enriquecedores mientras resuelves misterios, haces amigos y ayudas a otros en el camino.Sky es una experiencia de juego ganadora de múltiples premios creada por el estudio que creó Journey and Flower. ¡Descárgalo hoy!')
-
-create table sec_guia(
-	id_guia int identity,
-	img_guia image,
-	title_guia varchar(100),
-	descrip_guia varchar(max)
-)
-insert into sec_guia
-values('C:\Users\odyar\OneDrive\Escritorio\img\guide.jpg','Deja que la luz sea la guía','Desde temporadas de aventuras, eventos del juego hasta un mundo en constante expansión de amistades y objetos coleccionables para desbloquear, hay mucho que hacer en Sky. Restaura la luz caída en las constelaciones ayudando a otros. Aquí tienes una introducción para empezar en el reino.')
-
+values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/comunidad.jpeg?raw=true', 
+	'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/sky.png?raw=true',
+	'Únete a la encantadora comunidad de Sky',
+	'Tomarse de la mano y emprender el vuelo en una aventura social inolvidable junto con sus seres queridos. Explora los siete reinos de este mundo bellamente animado con otros jugadores donde la compasión, la comunidad y el asombro te saludan en cada paso. Crea recuerdos enriquecedores mientras resuelves misterios, haces amigos y ayudas a otros en el camino.Sky es una experiencia de juego ganadora de múltiples premios creada por el estudio que creó Journey and Flower. ¡Descárgalo hoy!')
 
 
 create table sec_guia(
@@ -63,8 +39,12 @@ create table sec_guia(
 	title_guia varchar(30),
 	descrip_guia varchar(max)
 )
+
 insert into sec_guia
-values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/guide-bg.jpeg?raw=true','https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/guide.jpg?raw=true','Deja que la luz sea la guía','Desde temporadas de aventuras, eventos del juego hasta un mundo en constante expansión de amistades y objetos coleccionables para desbloquear, hay mucho que hacer en Sky. Restaura la luz caída en las constelaciones ayudando a otros. Aquí tienes una introducción para empezar en el reino.')
+values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/guide-bg.jpeg?raw=true',
+'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/guide.jpg?raw=true',
+'Deja que la luz sea la guía','Desde temporadas de aventuras, eventos del juego hasta un mundo en constante expansión de amistades y objetos coleccionables para desbloquear, 
+hay mucho que hacer en Sky. Restaura la luz caída en las constelaciones ayudando a otros. Aquí tienes una introducción para empezar en el reino.')
 
 
 create table sec_avatares(
@@ -75,9 +55,12 @@ create table sec_avatares(
 )
 
 insert into sec_avatares
-values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Ody.jpg?raw=true','Niño de luz con vibes de socializar, le gusta estar de chill, vestir de rosa e interactuar.','Avatar de Odeth'),
-	  ('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Gera.jpg?raw=true', 'Niño de luz con cara "háblame y te pego", poco socail, prefiere jugar solo y evitar el ruido.','Avatar de Gerardo'),
-	  ('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Freddy.jpg?raw=true', 'Niño de luz con ropa cool, veterano, ignora solicitudes de amistad, tiene los mejores artículos.','Avatar de Freddy')
+values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Ody.jpg?raw=true',
+		'Niño de luz con vibes de socializar, le gusta estar de chill, vestir de rosa e interactuar.','Avatar de Odeth'),
+	  ('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Gera.jpg?raw=true', 
+	  'Niño de luz con cara "háblame y te pego", poco socail, prefiere jugar solo y evitar el ruido.','Avatar de Gerardo'),
+	  ('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Freddy.jpg?raw=true', 
+	  'Niño de luz con ropa cool, veterano, ignora solicitudes de amistad, tiene los mejores artículos.','Avatar de Freddy')
 
 create table sec_Recursos_razones(
 	img_nube varchar(max),
@@ -92,7 +75,9 @@ create table sec_razones(
 )
 
 insert into sec_Recursos_razones
-values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/cloud-primary-light--top.png?raw=true','https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Sky%20God.jpg?raw=true','https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Sky_icon.jpg?raw=true','Razones para jugar Sky')
+values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/cloud-primary-light--top.png?raw=true',
+'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Sky%20God.jpg?raw=true',
+'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Sky_icon.jpg?raw=true','Razones para jugar Sky')
 
 insert into sec_razones
 values('Puedes relejarte y estar de chill.'),
@@ -109,7 +94,10 @@ create table sec_Eden(
 )
 
 insert into sec_Eden
-values('Ojo del Edén','El Ojo de Edén es la zona más peligrosa del reino de Sky. En su interior encontrarás el mayor reto al que te enfrentarás. El área está plagada de Dragones Oscuros, peligros y una fuerte Tormenta empeñada en absorber tu luz y debilitarte, mientras que te esfuerzas por llevar a las estrellas perdidas a su hogar. Solo los jugadores más habilidosos y fuertes obtendrán la recompensa. Completa este reino con ayuda de tus amigos y averigua si eres capaz de superar este desafío.','https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Eden-removebg-preview.png?raw=true')
+values('Ojo del Edén','El Ojo de Edén es la zona más peligrosa del reino de Sky. En su interior encontrarás el mayor reto al que te enfrentarás. 
+		El área está plagada de Dragones Oscuros, peligros y una fuerte Tormenta empeñada en absorber tu luz y debilitarte, mientras que te esfuerzas por llevar a las estrellas perdidas 
+		a su hogar. Solo los jugadores más habilidosos y fuertes obtendrán la recompensa. Completa este reino con ayuda de tus amigos y averigua si eres capaz de superar este desafío.',
+		'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/Eden-removebg-preview.png?raw=true')
 
 create table nav(
 	img_logo varchar(max),
@@ -117,7 +105,9 @@ create table nav(
 	icon_menu varchar(max)
 )
 insert into nav
-values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/sky-logo-white.png?raw=true','https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/header-bg.png?raw=true','https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/pngegg.png?raw=true')
+values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/sky-logo-white.png?raw=true',
+		'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/header-bg.png?raw=true',
+		'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/pngegg.png?raw=true')
 
 
 create table banner(
@@ -128,5 +118,17 @@ create table banner(
 )
 
 insert into banner
-values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/sky-hero.jpeg?raw=true','https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/sky-logo-white.png?raw=true','Children of the Light', 'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/cloud-white-hero--top.png?raw=true')
+values('https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/sky-hero.jpeg?raw=true',
+'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/sky-logo-white.png?raw=true','Children of the Light', 
+'https://github.com/Ody26/Parcial-2/blob/main/Parcial-2-main/Parcial-2-main/Parcial%202/img/cloud-white-hero--top.png?raw=true')
 
+create table usuarios (
+id_usua int identity
+	constraint Formulario_id_pk primary key,
+nombre varchar (max),
+email varchar (50)
+	constraint Formulario_email_ck
+		check (email like '%@%'),
+mensaje varchar (max)
+)
+select * from usuarios
